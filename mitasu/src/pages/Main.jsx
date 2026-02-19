@@ -54,7 +54,7 @@ function Main() {
             ) : (
                 <>
                     <div>
-                        <main className="h-screen bg-black">
+                        <main className="h-screen bg-black overflow-auto">
                             <h1 className="text-white text-center text-5xl">Now Airing</h1>
                             <div className="flex flex-wrap justify-center">
                                 {season.map((anime) => {

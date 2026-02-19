@@ -1,24 +1,44 @@
 import axios from "axios"
 import { useState } from "react"
 import Toastify from 'toastify-js'
+import { useNavigate } from "react-router"
+import BaseURL from "../assets/BaseURL"
 
 function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const navigate = useNavigate()
 
-    async function handleSubmit() {
+    async function handleSubmit(e) {
+        e.preventDefault()
         try {
-
-        } catch (error) {
-            console.log(error)
+            const { data } = await axios.post(`${BaseURL}login`, { email, password })
+            localStorage.setItem("access_token", data.access_token)
             Toastify({
-                text: "This is a toast",
+                text: `${email} berhasil login. Selamat datang di Mitasu!`,
                 duration: 3000,
                 destination: "https://github.com/apvarun/toastify-js",
                 newWindow: true,
                 close: true,
                 gravity: "top", // `top` or `bottom`
-                position: "left", // `left`, `center` or `right`
+                position: "center", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+            navigate("/")
+        } catch (error) {
+            console.log(error)
+            Toastify({
+                text: "Email atau password salah. Coba lagi.",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
                 stopOnFocus: true, // Prevents dismissing of toast on hover
                 style: {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",

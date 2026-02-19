@@ -3,7 +3,7 @@ import axios from "axios";
 import jikanURL from "../../assets/jikanURL";
 
 const initialState = {
-    season: [],
+    topanime: [],
     page: 1,
     totalPage: 0,
     loading: false,
@@ -16,21 +16,21 @@ export const topanimeSlice = createSlice({
     reducers: {
         fetchPending: (state) => {
             state.loading = true
-            state.season = initialState.season
+            state.topanime = initialState.topanime
             state.page = initialState.page
             state.totalPage = initialState.totalPage
             state.error = initialState.error
         },
         fetchSuccess: (state, action) => {
             state.loading = initialState.loading
-            state.season = action.payload.data
+            state.topanime = action.payload.data
             state.page = action.payload.pagination.current_page
             state.totalPage = action.payload.pagination.last_visible_page
             state.error = initialState.error
         },
         fetchFailed: (state, action) => {
             state.loading = initialState.loading
-            state.season = initialState.season
+            state.topanime = initialState.topanime
             state.error = action.payload
         }
     }
