@@ -46,6 +46,9 @@ function AnimeCard({ anime }) {
                 },
                 onClick: function () { } // Callback after click
             }).showToast();
+            if (error.response.status === 401) {
+                navigate("/login")
+            }
         }
     }
 
