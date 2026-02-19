@@ -4,6 +4,8 @@ import Register from "./pages/Register"
 import Main from "./pages/Main"
 import MyBookmark from "./pages/MyBookmark"
 import BaseLayout from "./component/BaseLayout"
+import SearchAnime from "./pages/SearchAnime"
+import TopAnime from "./pages/TopAnime"
 
 
 
@@ -14,11 +16,13 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />}/>
-          <Route path="/register" element={<Register />}/>
-          <Route element={<BaseLayout />}/>
-          <Route path="/" element={<Main />}/>
-          <Route path="/mybookmark" element={<MyBookmark />}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route element={<BaseLayout />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/mybookmark" element={<MyBookmark />} />
+          <Route path="/top-anime" element={<TopAnime />} />
+          <Route path="/search-anime" element={<SearchAnime />} />
         </Routes>
       </BrowserRouter>
     </>
