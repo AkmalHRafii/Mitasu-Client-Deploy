@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router"
 import BaseURL from "../assets/BaseURL"
 import Toastify from 'toastify-js'
-import jikanURL from "../assets/jikanURL"
+import JikanURL from "../assets/JikanURL"
 
 function BookmarkCard({ bookmark }) {
     const id = bookmark.id
@@ -51,7 +51,7 @@ function BookmarkCard({ bookmark }) {
 
     async function fetchAnime() {
         try {
-            const { data } = await axios.get(`${jikanURL}anime/${bookmark.mal_id}`)
+            const { data } = await axios.get(`${JikanURL}anime/${bookmark.mal_id}`)
             setAnime(data.data)
         } catch (error) {
             console.log(error)
