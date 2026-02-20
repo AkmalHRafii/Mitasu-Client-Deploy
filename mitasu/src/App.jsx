@@ -6,6 +6,7 @@ import MyBookmark from "./pages/MyBookmark"
 import BaseLayout from "./component/BaseLayout"
 import SearchAnime from "./pages/SearchAnime"
 import TopAnime from "./pages/TopAnime"
+import Recommend from "./pages/Recommend"
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/mybookmark" element={<MyBookmark />} />
           <Route path="/top-anime" element={<TopAnime />} />
           <Route path="/search-anime" element={<SearchAnime />} />
+          <Route path="/recommend" element={<Recommend />} />
         </Routes>
       </BrowserRouter>
     </>

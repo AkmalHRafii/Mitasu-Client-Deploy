@@ -14,7 +14,7 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault()
         try {
-            const { data } = await axios.post(`${BaseURL}login`, { email, password })
+            const { data } = await axios.post(`${BaseURL}user/login`, { email, password })
             localStorage.setItem("access_token", data.access_token)
             Toastify({
                 text: `${email} berhasil login. Selamat datang di Mitasu!`,

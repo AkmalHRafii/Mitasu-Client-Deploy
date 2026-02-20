@@ -15,8 +15,11 @@ function NavBar() {
                         <NavLink to="/">
                             <span className="mr-15 ml-5">Mitasu</span>
                         </NavLink>
-                        <NavLink to="/bookmark">
+                        <NavLink to="/mybookmark">
                             <span className="mr-15 ml-15">MyBookmark</span>
+                        </NavLink>
+                        <NavLink to="/recommend">
+                            <span className="mr-15 ml-15">Recommend</span>
                         </NavLink>
                         <NavLink to="/top-anime">
                             <span className="mr-15 ml-15">Top Anime</span>

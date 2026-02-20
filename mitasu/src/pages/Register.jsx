@@ -15,8 +15,7 @@ function Register() {
     async function handleSubmit(e) {
         e.preventDefault()
         try {
-            const { data } = await axios.post(`${BaseURL}register`, { email, password })
-            localStorage.setItem("access_token", data.access_token)
+            const { data } = await axios.post(`${BaseURL}user/register`, { email, password })
             Toastify({
                 text: `${email} Selamat datang di Mitasu!`,
                 duration: 3000,
