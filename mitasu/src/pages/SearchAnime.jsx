@@ -1,7 +1,7 @@
 import { useState } from "react"
 import NavBar from "../component/NavBar"
 import axios from "axios"
-import jikanURL from "../assets/jikanURL"
+import jikanURL from "../assets/JikanURL"
 import AnimeCard from "../component/AnimeCard"
 
 
