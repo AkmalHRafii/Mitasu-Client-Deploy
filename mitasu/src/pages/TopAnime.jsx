@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import AnimeCard from "../component/AnimeCard"
 import NavBar from "../component/NavBar"
-import jikanURL from "../assets/jikanURL"
+import jikanURL from "../assets/JikanURL"
 import { useSelector, useDispatch } from "react-redux"
 import { fetchAsync } from "../features/topAnime/topanimeSlicer"
 
