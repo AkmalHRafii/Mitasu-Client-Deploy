@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import jikanURL from "../../assets/jikanURL";
+import jikanURL from "../../assets/JikanURL";
 
 const initialState = {
     season: [],
