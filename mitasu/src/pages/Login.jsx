@@ -58,7 +58,7 @@ function Login() {
             })
             localStorage.setItem("access_token", data.access_token)
             Toastify({
-                text: `${data.user.userName} berhasil login. Selamat datang di Mitasu!`,
+                text: `Selamat datang di Mitasu!`,
                 duration: 3000,
                 destination: "https://github.com/apvarun/toastify-js",
                 newWindow: true,
