@@ -16,11 +16,13 @@ function Recommend() {
                     Authorization: `Bearer ${localStorage.getItem("access_token")}`
                 }
             })
+            console.log(data)
             setResponse(JSON.parse(data.recommendations))
             setRecommend(response.recommendations)
             setReason(response.reasoning)
             console.log(response.recommendations)
             console.log(response.reasoning)
+            console.log(response)
         } catch (error) {
             console.log(error)
         } finally {
@@ -36,7 +38,7 @@ function Recommend() {
             {loadingRecommend ? (
                 <>
                     <div className="h-screen justify-center items-center bg-black">
-                        <h2 className="text-center text-2xl text-white">Rekomendasi lagi dicari...</h2>
+                        <h2 className="text-center text-2xl text-white">Mencari rekomendasi...</h2>
                     </div>
                 </>
             ) : (
@@ -44,10 +46,10 @@ function Recommend() {
                     <div className="h-screen w-full overflow-auto bg-black">
                         <h1 className="text-center text-5xl text-white m-5">Rekomendasi</h1>
                         <div className="flex flex-wrap justify-center">
-                            {recommend.length > 0 ?
+                            {recommend?.length > 0 ?
                                 <div className="text-white">{recommend.map((anime) => {
                                     return (
-                                        <div key={anime.title} className="m-5">
+                                        <div key={anime} className="m-5">
                                             <h2 className="text-white text-center text-2xl p-5">{anime}</h2>
                                         </div>
                                     )
@@ -57,8 +59,8 @@ function Recommend() {
                                         <h2 className="text-white text-center text-2xl p-5">{reason}</h2>
                                     </div>
                                 </div>
-                                : <div>
-                                    <h2 className="text-white">Belum ada rekomendasi</h2>
+                                : <div className="flex justify-center items-center">
+                                    <h2 className="text-white">Belum bisa rekomendasi. Coba tambah bookmark dulu.</h2>
                                 </div>
                             }
                         </div>
